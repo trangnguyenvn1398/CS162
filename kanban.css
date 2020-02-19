@@ -1,0 +1,32 @@
+div {
+  column-count: 3;
+  column-gap: 40px;
+  column-rule: 3px solid blue;
+  column-width: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: red;
+}
+
+.column {
+  color: orange;
+  text-align: center;
+  align-items: center;
+  background-color: silver;
+}
+
+.row {
+  text-align: center;
+  column-span: 1;
+  color: purple;
+  background-color: green;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

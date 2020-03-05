@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Kanban board</title>
+  </head>
+  <body>
+    <h1>Kanban board</h1>
+    <div class="">
+      Add a new item:
+      <form action="{{url_for('add')}}" method="POST">
+      <input type="text" name="newitem" value="">
+      <input type="submit" name="submit" value="Add items">
+      </form>
+    </div>
+    <div>
+      <h2>To Do</h2>
+      <ul>
+        {% for task in to_do %}
+        <li style='font-size: 20pt'>{{task.text}}<a href="{{url_for('move_to_doing', id=task.id)}}">Move to doing</a></li>
+
+        {% endfor %}
+      </ul>
+      <h2>Doing</h2>
+      <ul>
+        {% for task in doing %}
+        <li style='font-size: 20pt'>{{task.text}}<a href="{{url_for('move_to_done', id=task.id)}}">Move to done</a></li>
+
+        {% endfor %}
+      </ul>
+      <h2>Done</h2>
+      <ul>
+        {% for task in done %}
+        <li style='font-size: 20pt'>{{task.text}}</li>
+
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
